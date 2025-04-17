@@ -9,25 +9,10 @@ with open("product_description.txt", "r") as f:
     product_summary = f.read()
 
 system_prompt = f"""
-You are a helpful assistant to evaluate how relevant a person is to our product, to help us select potential customers.
-You will be provided with the attendee's abstract content, abstract URL, and their organization. if the attendee is from a company such as 10X genomics, search the company online, and find out if it is a competitor company
-Here is a summary of our company and products:
 
 {product_summary}
 
-Based on this, score each attendee on a scale from 0 to 5:
-- 5 = Perfect fit; ideal customer based on abstract. If they are already using spatial transcriptomics.
-- 4 = Good fit; relevant abstract or a likely user. If they haven't spatial transcriptomics, but they are using single cells RNA sequencing
-- 3 = Moderate; related topic but less clear. If they haven't single cell RNA sequencing or spatial transcriptomics, but they are studying gene expressions.
-- 2 = Little match; barely relevant. Not studying gene exppression.
-- 1 = They are from Competitor company or totally unrelated, 
 
-You will be given 20 attendees. For each attendee, return a single line with:
-- URL (as provided)
-- Score (1–5) based on relevance to the product
-- A short one-sentence reason, your reason should be in this format: Research about ... + oganization belong to university/instititue/company/indutry... + your reason. keep it aound 20 words.
-Only return 20 lines, one per attendee, in the format:
-<URL>, <score>, <reason>
 """
 
 client = OpenAI()
