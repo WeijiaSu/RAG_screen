@@ -44,9 +44,9 @@ def parse_info(full_text):
     return presenter, affiliation, title, abstract
 
 # # === Main loop ===
-# df = pd.read_excel("C:/Users/wsu/OneDrive - Complete Genomics Inc/MeetingNotes/AACR/AACR_2025_Leads.xlsx")  # Replace with actual file
-# output_file = "C:/Users/wsu/OneDrive - Complete Genomics Inc/MeetingNotes/AACR/abstract_info_output.csv"
-# error_file = "C:/Users/wsu/OneDrive - Complete Genomics Inc/MeetingNotes/AACR/failed_urls.csv"
+# df = pd.read_excel("./2025_Leads.xlsx")  # Replace with actual file
+# output_file = "./abstract_info_output.csv"
+# error_file = "./failed_urls.csv"
 # pd.set_option("display.max_column",40)
 # print(df[0:10])
 # df=df.loc[df["Poster Number"].notna()]
@@ -86,9 +86,9 @@ def parse_info(full_text):
 
 
 # === Main loop ===
-df = pd.read_csv("C:/Users/wsu/OneDrive - Complete Genomics Inc/MeetingNotes/AACR/failed_urls2.csv",header=None) 
-output_file = "C:/Users/wsu/OneDrive - Complete Genomics Inc/MeetingNotes/AACR/abstract_info_output3.csv"
-error_file = "C:/Users/wsu/OneDrive - Complete Genomics Inc/MeetingNotes/AACR/failed_urls3.csv"
+df = pd.read_csv("./failed_urls2.csv",header=None) 
+output_file = "./abstract_info_output3.csv"
+error_file = "./failed_urls3.csv"
 pd.set_option("display.max_column",40)
 print(df[0:10])
 print(df.shape)
